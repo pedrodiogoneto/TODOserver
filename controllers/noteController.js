@@ -10,8 +10,7 @@ function noteController() {
             let notesList = await noteService.getAllNotes()
             return res.status(200).json(notesList)
         } catch (error) {
-            Error('ocurreu erro')
-
+            Error('There was an error receiving the Note List')
         } 
     }
 
@@ -21,7 +20,7 @@ function noteController() {
             let notes = await noteService.postNewNote(title, content)
             return res.status(200).json(notes)
         } catch (error) {
-            Error('ocurreu erro')
+            Error('There was an error Saving the New Note')
         } 
     }
 
@@ -31,7 +30,7 @@ function noteController() {
             let notes = await noteService.editNote(id, title, content)
             return res.status(200).json(notes)
         } catch (error) {
-            Error('ocurreu erro')
+            Error('There was an error editing the Note')
         } 
     }
     
@@ -41,7 +40,7 @@ function noteController() {
             let notes = await noteService.deleteNote(id)
             return res.status(200).json(notes)
         } catch (error) {
-            Error('ocurreu erro')
+            Error('There was an error deleting the Note')
         } 
     }
 
